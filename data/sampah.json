@@ -1,0 +1,352 @@
+[
+    {
+        "nama": "Kulit Pisang",
+        "kategori": "Organik",
+        "waktu_urai": "2-5 minggu",
+        "pengelolaan": "Kompos atau pupuk organik",
+        "dampak": "Mudah terurai, baik untuk tanah"
+    },
+    {
+        "nama": "Daun Kering",
+        "kategori": "Organik",
+        "waktu_urai": "1-3 bulan",
+        "pengelolaan": "Kompos atau mulsa",
+        "dampak": "Memperbaiki struktur tanah"
+    },
+    {
+        "nama": "Sisa Nasi",
+        "kategori": "Organik",
+        "waktu_urai": "1-2 minggu",
+        "pengelolaan": "Kompos atau pakan ternak",
+        "dampak": "Dapat menarik hama jika tidak dikelola"
+    },
+    {
+        "nama": "Kulit Jeruk",
+        "kategori": "Organik",
+        "waktu_urai": "2-4 minggu",
+        "pengelolaan": "Kompos atau pengusir serangga alami",
+        "dampak": "Mengandung minyak esensial yang bermanfaat"
+    },
+    {
+        "nama": "Ampas Kopi",
+        "kategori": "Organik",
+        "waktu_urai": "3-6 bulan",
+        "pengelolaan": "Kompos atau pupuk tanaman",
+        "dampak": "Kaya nitrogen, baik untuk tanaman"
+    },
+    {
+        "nama": "Kulit Telur",
+        "kategori": "Organik",
+        "waktu_urai": "1-3 tahun",
+        "pengelolaan": "Kompos atau sumber kalsium",
+        "dampak": "Memperkaya tanah dengan kalsium"
+    },
+    {
+        "nama": "Sisa Sayuran",
+        "kategori": "Organik",
+        "waktu_urai": "1-2 minggu",
+        "pengelolaan": "Kompos atau biogas",
+        "dampak": "Sumber nutrisi untuk tanah"
+    },
+    {
+        "nama": "Kulit Apel",
+        "kategori": "Organik",
+        "waktu_urai": "1-2 bulan",
+        "pengelolaan": "Kompos atau pakan ternak",
+        "dampak": "Mengandung serat dan nutrisi"
+    },
+    {
+        "nama": "Ranting Kecil",
+        "kategori": "Organik",
+        "waktu_urai": "6 bulan-2 tahun",
+        "pengelolaan": "Kompos atau bahan bakar biomassa",
+        "dampak": "Struktur untuk kompos"
+    },
+    {
+        "nama": "Kertas Tisu",
+        "kategori": "Organik",
+        "waktu_urai": "2-4 minggu",
+        "pengelolaan": "Kompos (jika tidak berlemak)",
+        "dampak": "Mudah terurai jika tidak terkontaminasi"
+    },
+    {
+        "nama": "Kotoran Hewan",
+        "kategori": "Organik",
+        "waktu_urai": "2-6 bulan",
+        "pengelolaan": "Kompos atau pupuk kandang",
+        "dampak": "Pupuk alami yang sangat baik"
+    },
+    {
+        "nama": "Serbuk Gergaji",
+        "kategori": "Organik",
+        "waktu_urai": "1-3 tahun",
+        "pengelolaan": "Kompos atau mulsa",
+        "dampak": "Memperbaiki drainase tanah"
+    },
+    {
+        "nama": "Kulit Bawang",
+        "kategori": "Organik",
+        "waktu_urai": "2-4 minggu",
+        "pengelolaan": "Kompos atau pewarna alami",
+        "dampak": "Mengandung antioksidan"
+    },
+    {
+        "nama": "Sisa Roti",
+        "kategori": "Organik",
+        "waktu_urai": "1-2 minggu",
+        "pengelolaan": "Kompos atau pakan burung",
+        "dampak": "Dapat menarik hama jika berlebihan"
+    },
+    {
+        "nama": "Bunga Layu",
+        "kategori": "Organik",
+        "waktu_urai": "1-3 minggu",
+        "pengelolaan": "Kompos atau dekorasi kering",
+        "dampak": "Mempercantik kompos"
+    },
+    {
+        "nama": "Kulit Kentang",
+        "kategori": "Organik",
+        "waktu_urai": "2-4 minggu",
+        "pengelolaan": "Kompos atau pembersih alami",
+        "dampak": "Kaya akan nutrisi"
+    },
+    {
+        "nama": "Ampas Teh",
+        "kategori": "Organik",
+        "waktu_urai": "3-6 bulan",
+        "pengelolaan": "Kompos atau pupuk tanaman",
+        "dampak": "Mengandung tanin yang bermanfaat"
+    },
+    {
+        "nama": "Sisa Ikan",
+        "kategori": "Organik",
+        "waktu_urai": "1-2 minggu",
+        "pengelolaan": "Kompos atau pupuk cair",
+        "dampak": "Kaya protein dan fosfor"
+    },
+    {
+        "nama": "Rumput Potong",
+        "kategori": "Organik",
+        "waktu_urai": "2-6 bulan",
+        "pengelolaan": "Kompos atau mulsa",
+        "dampak": "Sumber nitrogen untuk kompos"
+    },
+    {
+        "nama": "Kulit Jagung",
+        "kategori": "Organik",
+        "waktu_urai": "1-2 bulan",
+        "pengelolaan": "Kompos atau kerajinan",
+        "dampak": "Serat alami yang berguna"
+    },
+    {
+        "nama": "Botol Plastik",
+        "kategori": "Anorganik",
+        "waktu_urai": "450-1000 tahun",
+        "pengelolaan": "Daur ulang atau kerajinan",
+        "dampak": "Mencemari laut dan tanah"
+    },
+    {
+        "nama": "Kantong Plastik",
+        "kategori": "Anorganik",
+        "waktu_urai": "500-1000 tahun",
+        "pengelolaan": "Daur ulang atau ganti dengan tas kain",
+        "dampak": "Membunuh hewan laut"
+    },
+    {
+        "nama": "Kaleng Aluminium",
+        "kategori": "Anorganik",
+        "waktu_urai": "200-500 tahun",
+        "pengelolaan": "Daur ulang dengan nilai ekonomi tinggi",
+        "dampak": "Dapat didaur ulang tanpa batas"
+    },
+    {
+        "nama": "Botol Kaca",
+        "kategori": "Anorganik",
+        "waktu_urai": "1 juta tahun",
+        "pengelolaan": "Daur ulang atau kerajinan",
+        "dampak": "Tidak beracun tapi tidak terurai"
+    },
+    {
+        "nama": "Styrofoam",
+        "kategori": "Anorganik",
+        "waktu_urai": "500+ tahun",
+        "pengelolaan": "Hindari penggunaan, sulit didaur ulang",
+        "dampak": "Melepaskan zat beracun saat terbakar"
+    },
+    {
+        "nama": "Sedotan Plastik",
+        "kategori": "Anorganik",
+        "waktu_urai": "200-1000 tahun",
+        "pengelolaan": "Ganti dengan sedotan bambu/stainless",
+        "dampak": "Berbahaya untuk hewan laut"
+    },
+    {
+        "nama": "Kemasan Snack",
+        "kategori": "Anorganik",
+        "waktu_urai": "10-20 tahun",
+        "pengelolaan": "Ecobrick atau daur ulang khusus",
+        "dampak": "Sulit terurai karena multi-layer"
+    },
+    {
+        "nama": "Tutup Botol",
+        "kategori": "Anorganik",
+        "waktu_urai": "450 tahun",
+        "pengelolaan": "Kumpulkan untuk daur ulang",
+        "dampak": "Sering tertelan hewan"
+    },
+    {
+        "nama": "Kawat Tembaga",
+        "kategori": "Anorganik",
+        "waktu_urai": "100+ tahun",
+        "pengelolaan": "Daur ulang dengan nilai tinggi",
+        "dampak": "Dapat mencemari tanah"
+    },
+    {
+        "nama": "Piring Melamin",
+        "kategori": "Anorganik",
+        "waktu_urai": "500+ tahun",
+        "pengelolaan": "Gunakan berulang atau ganti keramik",
+        "dampak": "Melepaskan formaldehida"
+    },
+    {
+        "nama": "CD/DVD",
+        "kategori": "Anorganik",
+        "waktu_urai": "1 juta tahun",
+        "pengelolaan": "Daur ulang khusus atau kerajinan",
+        "dampak": "Mengandung logam berat"
+    },
+    {
+        "nama": "Kemasan Deterjen",
+        "kategori": "Anorganik",
+        "waktu_urai": "450 tahun",
+        "pengelolaan": "Bersihkan lalu daur ulang",
+        "dampak": "Residu kimia berbahaya"
+    },
+    {
+        "nama": "Mainan Plastik",
+        "kategori": "Anorganik",
+        "waktu_urai": "300-1000 tahun",
+        "pengelolaan": "Donasi atau daur ulang",
+        "dampak": "Mengandung BPA dan ftalat"
+    },
+    {
+        "nama": "Kemasan Shampo",
+        "kategori": "Anorganik",
+        "waktu_urai": "450 tahun",
+        "pengelolaan": "Refill atau daur ulang",
+        "dampak": "Residu kimia sulit dibersihkan"
+    },
+    {
+        "nama": "Sandal Jepit",
+        "kategori": "Anorganik",
+        "waktu_urai": "50-80 tahun",
+        "pengelolaan": "Daur ulang atau kerajinan",
+        "dampak": "Mikroplastik masuk rantai makanan"
+    },
+    {
+        "nama": "Kemasan Mie Instan",
+        "kategori": "Anorganik",
+        "waktu_urai": "10-20 tahun",
+        "pengelolaan": "Ecobrick atau hindari konsumsi berlebihan",
+        "dampak": "Lapisan lilin sulit terurai"
+    },
+    {
+        "nama": "Gelas Plastik",
+        "kategori": "Anorganik",
+        "waktu_urai": "450 tahun",
+        "pengelolaan": "Ganti dengan gelas kaca/stainless",
+        "dampak": "Melepaskan mikroplastik"
+    },
+    {
+        "nama": "Kemasan Kosmetik",
+        "kategori": "Anorganik",
+        "waktu_urai": "500+ tahun",
+        "pengelolaan": "Program take-back brand",
+        "dampak": "Residu kimia kompleks"
+    },
+    {
+        "nama": "Tali Rafia",
+        "kategori": "Anorganik",
+        "waktu_urai": "20-30 tahun",
+        "pengelolaan": "Gunakan berulang atau ganti tali alami",
+        "dampak": "Dapat melilit hewan"
+    },
+    {
+        "nama": "Ember Plastik",
+        "kategori": "Anorganik",
+        "waktu_urai": "20-30 tahun",
+        "pengelolaan": "Gunakan hingga rusak lalu daur ulang",
+        "dampak": "Tahan lama jika dirawat"
+    },
+    {
+        "nama": "Baterai Bekas",
+        "kategori": "B3",
+        "waktu_urai": "100+ tahun",
+        "pengelolaan": "Kumpulkan di drop box khusus B3",
+        "dampak": "Merkuri dan timbal mencemari tanah dan air"
+    },
+    {
+        "nama": "Lampu Neon",
+        "kategori": "B3",
+        "waktu_urai": "Tidak terurai",
+        "pengelolaan": "Serahkan ke fasilitas daur ulang B3",
+        "dampak": "Mengandung merkuri yang sangat beracun"
+    },
+    {
+        "nama": "Cat Bekas",
+        "kategori": "B3",
+        "waktu_urai": "Tidak terurai",
+        "pengelolaan": "Keringkan lalu buang ke TPS B3",
+        "dampak": "Logam berat dan pelarut beracun"
+    },
+    {
+        "nama": "Oli Bekas",
+        "kategori": "B3",
+        "waktu_urai": "Tidak terurai",
+        "pengelolaan": "Serahkan ke bengkel atau daur ulang",
+        "dampak": "1 liter oli cemari 1 juta liter air"
+    },
+    {
+        "nama": "Obat Kadaluarsa",
+        "kategori": "B3",
+        "waktu_urai": "Bervariasi",
+        "pengelolaan": "Kembalikan ke apotek atau faskes",
+        "dampak": "Resistensi antibiotik dan keracunan"
+    },
+    {
+        "nama": "Pestisida Bekas",
+        "kategori": "B3",
+        "waktu_urai": "10-30 tahun",
+        "pengelolaan": "Jangan buang sembarangan, serahkan ke dinas pertanian",
+        "dampak": "Kanker dan gangguan hormon"
+    },
+    {
+        "nama": "Aki Bekas",
+        "kategori": "B3",
+        "waktu_urai": "Tidak terurai",
+        "pengelolaan": "Tukar tambah atau serahkan ke bengkel",
+        "dampak": "Asam sulfat dan timbal sangat berbahaya"
+    },
+    {
+        "nama": "Termometer Raksa",
+        "kategori": "B3",
+        "waktu_urai": "Tidak terurai",
+        "pengelolaan": "Serahkan ke fasilitas medis",
+        "dampak": "Merkuri merusak sistem saraf"
+    },
+    {
+        "nama": "Toner Printer",
+        "kategori": "B3",
+        "waktu_urai": "Tidak terurai",
+        "pengelolaan": "Program take-back produsen",
+        "dampak": "Partikel halus berbahaya untuk pernapasan"
+    },
+    {
+        "nama": "Cairan Pembersih",
+        "kategori": "B3",
+        "waktu_urai": "Bervariasi",
+        "pengelolaan": "Habiskan sesuai petunjuk, jangan campur",
+        "dampak": "Iritasi kulit dan gangguan pernapasan"
+    }
+]

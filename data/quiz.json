@@ -1,0 +1,188 @@
+{
+    "mudah": [
+        {
+            "question": "Sampah organik adalah sampah yang...",
+            "options": ["Mudah terurai", "Sulit terurai", "Berbahaya", "Beracun"],
+            "correct": 0,
+            "explanation": "Sampah organik mudah terurai secara alami oleh mikroorganisme."
+        },
+        {
+            "question": "Contoh sampah organik adalah...",
+            "options": ["Plastik", "Kulit pisang", "Kaca", "Logam"],
+            "correct": 1,
+            "explanation": "Kulit pisang adalah sampah organik yang mudah terurai."
+        },
+        {
+            "question": "Warna tempat sampah untuk sampah organik adalah...",
+            "options": ["Merah", "Hijau", "Biru", "Kuning"],
+            "correct": 1,
+            "explanation": "Tempat sampah hijau digunakan untuk sampah organik."
+        },
+        {
+            "question": "Sampah B3 artinya...",
+            "options": ["Bahan Berbahaya dan Beracun", "Bahan Besar dan Berat", "Bahan Basah dan Bersih", "Bahan Baik dan Berguna"],
+            "correct": 0,
+            "explanation": "B3 adalah singkatan dari Bahan Berbahaya dan Beracun."
+        },
+        {
+            "question": "Contoh sampah anorganik adalah...",
+            "options": ["Daun", "Botol plastik", "Kulit buah", "Sisa makanan"],
+            "correct": 1,
+            "explanation": "Botol plastik adalah sampah anorganik yang sulit terurai."
+        },
+        {
+            "question": "Reduce artinya...",
+            "options": ["Mengurangi", "Menggunakan kembali", "Mendaur ulang", "Mengganti"],
+            "correct": 0,
+            "explanation": "Reduce berarti mengurangi penggunaan barang yang menghasilkan sampah."
+        },
+        {
+            "question": "Reuse artinya...",
+            "options": ["Mengurangi", "Menggunakan kembali", "Mendaur ulang", "Menolak"],
+            "correct": 1,
+            "explanation": "Reuse berarti menggunakan kembali barang yang masih bisa dipakai."
+        },
+        {
+            "question": "Recycle artinya...",
+            "options": ["Mengurangi", "Menggunakan kembali", "Mendaur ulang", "Mengganti"],
+            "correct": 2,
+            "explanation": "Recycle berarti mendaur ulang sampah menjadi produk baru."
+        },
+        {
+            "question": "Sampah yang paling berbahaya adalah...",
+            "options": ["Organik", "Anorganik", "B3", "Kertas"],
+            "correct": 2,
+            "explanation": "Sampah B3 paling berbahaya karena mengandung zat beracun."
+        },
+        {
+            "question": "Kompos dibuat dari sampah...",
+            "options": ["Plastik", "Organik", "Kaca", "Logam"],
+            "correct": 1,
+            "explanation": "Kompos dibuat dari sampah organik yang mudah terurai."
+        }
+    ],
+    "sedang": [
+        {
+            "question": "Berapa lama waktu terurai botol plastik?",
+            "options": ["50 tahun", "100 tahun", "450 tahun", "50 hari"],
+            "correct": 2,
+            "explanation": "Botol plastik membutuhkan waktu sekitar 450 tahun untuk terurai."
+        },
+        {
+            "question": "Dampak sampah plastik di laut adalah...",
+            "options": ["Memberi makan ikan", "Membunuh hewan laut", "Menyuburkan terumbu karang", "Membersihkan air laut"],
+            "correct": 1,
+            "explanation": "Sampah plastik dapat membunuh hewan laut yang menelannya."
+        },
+        {
+            "question": "Prinsip 5R dalam pengelolaan sampah adalah...",
+            "options": ["Refuse, Reduce, Reuse, Recycle, Replace", "Read, Run, Rest, Relax, Repeat", "Red, Round, Right, Real, Rich", "Rain, River, Rock, Road, Room"],
+            "correct": 0,
+            "explanation": "5R adalah Refuse, Reduce, Reuse, Recycle, dan Replace."
+        },
+        {
+            "question": "Mikroplastik berbahaya karena...",
+            "options": ["Terlalu besar", "Masuk rantai makanan", "Berwarna cerah", "Mudah terlihat"],
+            "correct": 1,
+            "explanation": "Mikroplastik berbahaya karena dapat masuk ke rantai makanan."
+        },
+        {
+            "question": "Sampah organik yang tidak dikelola dengan baik dapat menyebabkan...",
+            "options": ["Banjir", "Penyakit", "Kebakaran", "Gempa"],
+            "correct": 1,
+            "explanation": "Sampah organik yang membusuk dapat menjadi sarang penyakit."
+        },
+        {
+            "question": "Gas yang dihasilkan dari pembusukan sampah organik adalah...",
+            "options": ["Oksigen", "Nitrogen", "Metana", "Karbon dioksida"],
+            "correct": 2,
+            "explanation": "Sampah organik yang membusuk menghasilkan gas metana."
+        },
+        {
+            "question": "Ecobrick adalah...",
+            "options": ["Batu bata dari tanah", "Botol plastik diisi sampah plastik", "Bata dari semen", "Kayu untuk bangunan"],
+            "correct": 1,
+            "explanation": "Ecobrick adalah botol plastik yang diisi padat dengan sampah plastik."
+        },
+        {
+            "question": "Sampah elektronik termasuk kategori...",
+            "options": ["Organik", "Anorganik", "B3", "Kompos"],
+            "correct": 2,
+            "explanation": "Sampah elektronik mengandung logam berat sehingga termasuk B3."
+        },
+        {
+            "question": "Cara terbaik mengelola sampah baterai adalah...",
+            "options": ["Dibuang ke tempat sampah biasa", "Dibakar", "Dikumpulkan di drop box khusus", "Dikubur"],
+            "correct": 2,
+            "explanation": "Baterai harus dikumpulkan di drop box khusus untuk sampah B3."
+        },
+        {
+            "question": "Dampak sampah terhadap pemanasan global adalah...",
+            "options": ["Mengurangi suhu", "Meningkatkan gas rumah kaca", "Menyerap panas", "Tidak ada dampak"],
+            "correct": 1,
+            "explanation": "Sampah menghasilkan gas metana yang merupakan gas rumah kaca."
+        }
+    ],
+    "sulit": [
+        {
+            "question": "Berapa persen sampah plastik yang benar-benar didaur ulang secara global?",
+            "options": ["50%", "25%", "9%", "75%"],
+            "correct": 2,
+            "explanation": "Hanya sekitar 9% sampah plastik global yang benar-benar didaur ulang."
+        },
+        {
+            "question": "Zat berbahaya dalam styrofoam yang dilepaskan saat dipanaskan adalah...",
+            "options": ["Benzena", "Stirena", "Toluena", "Formaldehida"],
+            "correct": 1,
+            "explanation": "Styrofoam melepaskan stirena yang bersifat karsinogenik saat dipanaskan."
+        },
+        {
+            "question": "Konsep ekonomi sirkular dalam pengelolaan sampah bertujuan untuk...",
+            "options": ["Membakar semua sampah", "Mengurangi, menggunakan kembali, dan mendaur ulang", "Mengubur sampah", "Mengekspor sampah"],
+            "correct": 1,
+            "explanation": "Ekonomi sirkular bertujuan meminimalkan limbah melalui 3R."
+        },
+        {
+            "question": "Biogas dari sampah organik mengandung gas utama...",
+            "options": ["Oksigen", "Nitrogen", "Metana", "Hidrogen"],
+            "correct": 2,
+            "explanation": "Biogas dari sampah organik mengandung 50-70% metana."
+        },
+        {
+            "question": "Leachate adalah...",
+            "options": ["Air hujan", "Air bersih", "Cairan dari TPA yang mencemari tanah", "Air minum"],
+            "correct": 2,
+            "explanation": "Leachate adalah cairan dari TPA yang dapat mencemari air tanah."
+        },
+        {
+            "question": "Teknologi waste-to-energy mengubah sampah menjadi...",
+            "options": ["Kompos", "Plastik baru", "Energi listrik", "Air bersih"],
+            "correct": 2,
+            "explanation": "Waste-to-energy mengubah sampah menjadi energi listrik melalui pembakaran."
+        },
+        {
+            "question": "Persistent Organic Pollutants (POPs) dalam sampah berbahaya karena...",
+            "options": ["Mudah terurai", "Tidak terurai dan terakumulasi dalam tubuh", "Berwarna cerah", "Berbau harum"],
+            "correct": 1,
+            "explanation": "POPs tidak terurai dan terakumulasi dalam rantai makanan."
+        },
+        {
+            "question": "Prinsip Extended Producer Responsibility (EPR) berarti...",
+            "options": ["Konsumen bertanggung jawab penuh", "Produsen bertanggung jawab hingga akhir siklus produk", "Pemerintah mengelola semua sampah", "Tidak ada yang bertanggung jawab"],
+            "correct": 1,
+            "explanation": "EPR membuat produsen bertanggung jawab hingga produk menjadi sampah."
+        },
+        {
+            "question": "Mikroplastik berukuran kurang dari...",
+            "options": ["1 cm", "5 mm", "1 mm", "10 cm"],
+            "correct": 1,
+            "explanation": "Mikroplastik didefinisikan sebagai partikel plastik berukuran kurang dari 5 mm."
+        },
+        {
+            "question": "Dampak jangka panjang dari Great Pacific Garbage Patch adalah...",
+            "options": ["Membersihkan laut", "Mengganggu ekosistem laut global", "Menyediakan habitat baru", "Tidak ada dampak"],
+            "correct": 1,
+            "explanation": "Great Pacific Garbage Patch mengganggu ekosistem laut dan rantai makanan global."
+        }
+    ]
+}
