@@ -6,7 +6,6 @@
     <title>SmartWaste - Deteksi AI</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-50">
@@ -99,101 +98,10 @@
             </div>
         </div>
     </div>
-
+     <script src="deteksi.js"></script>
     <script src="script.js"></script>
     <script src="chatbot.js"></script>
 
-    <!-- Script Teachable Machine + Integrasi Chatbot -->
-    <script type="text/javascript">
-        const URL = "https://teachablemachine.withgoogle.com/models/nksewVn3T/";
-        let model, webcam, labelContainer, maxPredictions, isRunning = false;
-
-        async function startCamera() {
-            if (isRunning) return;
-            isRunning = true;
-
-            const modelURL = URL + "model.json";
-            const metadataURL = URL + "metadata.json";
-
-            // Load model
-            model = await tmImage.load(modelURL, metadataURL);
-            maxPredictions = model.getTotalClasses();
-
-            // Setup webcam
-            const flip = true;
-            webcam = new tmImage.Webcam(300, 300, flip);
-            await webcam.setup();
-            await webcam.play();
-            document.getElementById("webcam").srcObject = webcam.webcam;
-
-            // Label hasil prediksi
-            labelContainer = document.getElementById("prediction-result");
-            labelContainer.innerHTML = "";
-            for (let i = 0; i < maxPredictions; i++) {
-                labelContainer.appendChild(document.createElement("div"));
-            }
-
-            window.requestAnimationFrame(loop);
-        }
-
-        async function loop() {
-            if (!isRunning) return;
-            webcam.update();
-            await predict();
-            window.requestAnimationFrame(loop);
-        }
-
-        async function predict() {
-            if (!model || !webcam) return;
-            const prediction = await model.predict(webcam.canvas);
-            labelContainer.innerHTML = "";
-
-            let best = prediction[0];
-            prediction.forEach(p => {
-                if (p.probability > best.probability) best = p;
-                const div = document.createElement("div");
-                div.className = "p-2 bg-gray-100 rounded mb-2";
-                div.innerText = `${p.className}: ${(p.probability * 100).toFixed(2)}%`;
-                labelContainer.appendChild(div);
-            });
-
-            // Jika prediksi yakin > 70%, kirim ke chatbot
-            if (best.probability > 0.7) {
-                sendDetectionToChatbot(best.className);
-            }
-        }
-
-        async function stopCamera() {
-            if (webcam) {
-                webcam.stop();
-            }
-            isRunning = false;
-            document.getElementById("prediction-result").innerHTML = `
-                <div class="text-center text-gray-500 py-8">
-                    <div class="text-4xl mb-2">📷</div>
-                    <p>Kamera dihentikan</p>
-                </div>
-            `;
-        }
-
-        // === Integrasi ke Chatbot ===
-        function sendDetectionToChatbot(detectedClass) {
-            const messagesDiv = document.getElementById("chatMessages");
-
-            messagesDiv.innerHTML += `
-                <div class="bg-green-100 p-3 rounded-lg mb-2">
-                    <p class="text-sm">📷 Saya mendeteksi: <b>${detectedClass}</b></p>
-                </div>
-            `;
-
-            const response = generateChatbotResponse(detectedClass.toLowerCase());
-            messagesDiv.innerHTML += `
-                <div class="bg-gray-100 p-3 rounded-lg mb-2">
-                    <p class="text-sm">${response}</p>
-                </div>
-            `;
-            messagesDiv.scrollTop = messagesDiv.scrollHeight;
-        }
-    </script>
+   
 </body>
 </html>
