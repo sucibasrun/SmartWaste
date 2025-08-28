@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartWeist - Edukasi Sampah Interaktif</title>
+    <title>SmartWaste - Edukasi Sampah Interaktif</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,8 +13,9 @@
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center space-x-2">
-                    <div class="text-2xl">🌱</div>
-                    <h1 class="text-2xl font-bold">SmartWeist</h1>
+                    <img src="logo/SMANEL (1).png" alt="Logo SmartWaste" class="h-10 w-11 rounded-full">
+                    <img src="logo/SmartWaste.png" alt="Logo SmartWaste" class="h-15 w-20 rounded-full">
+                    <h1 class="text-2xl font-bold">SmartWaste</h1>
                 </div>
                 <div class="hidden md:flex space-x-6">
                     <a href="index.html" class="hover:text-green-200 transition">Home</a>
@@ -30,7 +31,7 @@
     </nav>
 
     <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden bg-purple-600 text-white p-4 md:hidden">
+    <div id="mobileMenu" class="hidden bg-white-100 text-blue p-4 md:hidden">
         <a href="index.html" class="block py-2">Home</a>
         <a href="deteksi.html" class="block py-2">Deteksi AI</a>
         <a href="database.html" class="block py-2">Database</a>
@@ -39,13 +40,14 @@
         <a href="tentang.html" class="block py-2">Tentang</a>
     </div>
 
+
     <!-- Home Section -->
     <section id="home" class="section">
         <div class="gradient-bg text-white py-20">
             <div class="container mx-auto px-4 text-center">
-                <div class="text-6xl mb-4">🌱</div>
-                <h1 class="text-5xl font-bold mb-4">SmartWeist</h1>
-                <p class="text-xl mb-8">Platform Edukasi Sampah Interaktif dengan AI</p>
+                 <img src="logo/SmartWaste.png" alt="Logo SmartWaste" class="mx-auto h-26 w-32 mb-4">
+                <h1 class="text-5xl font-bold mb-4">SmartWast</h1>
+                <p class="text-xl mb-8">Platform Pendeteksi Sampah Interaktif dengan AI</p>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
                     <a href="deteksi.html" class="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition cursor-pointer">
                         <div class="text-3xl mb-3">🤖</div>
@@ -79,7 +81,7 @@
         </button>
         <div id="chatbot" class="hidden bg-white rounded-lg shadow-xl mt-2 w-80 h-96">
             <div class="bg-blue-500 text-white p-4 rounded-t-lg">
-                <h4 class="font-bold">🤖 Assistant SmartWeist</h4>
+                <h4 class="font-bold">🤖 Assistant SmartWast</h4>
                 <p class="text-sm opacity-90">Tanya tentang sampah!</p>
             </div>
             <div class="p-4 h-64 overflow-y-auto" id="chatMessages">
@@ -95,6 +97,10 @@
             </div>
         </div>
     </div>
+    
+    <footer>
+    <p>© 2025 SmartWast | Dibuat oleh Wulan Suci Basrun-Ellsaday</p>
+  </footer>
 
     <script src="script.js"></script>
     <script src="chatbot.js"></script>

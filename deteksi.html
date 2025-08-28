@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartWeist - Deteksi AI</title>
+    <title>SmartWaste - Deteksi AI</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
@@ -15,8 +15,8 @@
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center space-x-2">
-                    <div class="text-2xl">🌱</div>
-                    <h1 class="text-2xl font-bold">SmartWeist</h1>
+                    <img src="logo/SmartWaste.png" alt="Logo SmartWaste" class="h-15 w-20 rounded-full">
+                    <h1 class="text-2xl font-bold">SmartWaste</h1>
                 </div>
                 <div class="hidden md:flex space-x-6">
                     <a href="index.html" class="hover:text-green-200 transition">Home</a>
@@ -32,7 +32,7 @@
     </nav>
 
     <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden bg-purple-600 text-white p-4 md:hidden">
+    <div id="mobileMenu" class="hidden bg-white-100 text-blue p-4 md:hidden">
         <a href="index.html" class="block py-2">Home</a>
         <a href="deteksi.html" class="block py-2">Deteksi AI</a>
         <a href="database.html" class="block py-2">Database</a>
@@ -49,20 +49,13 @@
                 <div class="bg-white rounded-lg shadow-lg p-6">
                     <h3 class="text-xl font-bold mb-4">Kamera Deteksi</h3>
                     <div class="relative">
-                        <video id="webcam" autoplay muted class="w-full rounded-lg bg-gray-200" style="height: 300px;"></video>
+                        <video id="webcam" autoplay muted playsinline class="w-full rounded-lg bg-gray-200" style="height: 300px;"></video>
                         <canvas id="canvas" class="hidden"></canvas>
                     </div>
                     <div class="mt-4 space-y-2">
                         <button onclick="startCamera()" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition">Mulai Kamera</button>
                         <button onclick="predict()" class="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition">Deteksi Sampah</button>
                         <button onclick="stopCamera()" class="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition">Stop Kamera</button>
-                    </div>
-                    <!-- Slot untuk Teachable Machine -->
-                    <div class="mt-4 p-4 bg-gray-100 rounded-lg">
-                        <p class="text-sm text-gray-600 mb-2">Tempel kode Teachable Machine di sini:</p>
-                        <div id="teachable-machine-slot">
-                            <!-- Kode export dari Teachable Machine akan ditempel di sini -->
-                        </div>
                     </div>
                 </div>
                 <div class="bg-white rounded-lg shadow-lg p-6">
@@ -104,5 +97,98 @@
 
     <script src="script.js"></script>
     <script src="chatbot.js"></script>
+
+    <!-- Script Teachable Machine + Integrasi Chatbot -->
+    <script type="text/javascript">
+        const URL = "https://teachablemachine.withgoogle.com/models/nksewVn3T/";
+        let model, webcam, labelContainer, maxPredictions, isRunning = false;
+
+        async function startCamera() {
+            if (isRunning) return;
+            isRunning = true;
+
+            const modelURL = URL + "model.json";
+            const metadataURL = URL + "metadata.json";
+
+            // Load model
+            model = await tmImage.load(modelURL, metadataURL);
+            maxPredictions = model.getTotalClasses();
+
+            // Setup webcam
+            const flip = true;
+            webcam = new tmImage.Webcam(300, 300, flip);
+            await webcam.setup();
+            await webcam.play();
+            document.getElementById("webcam").srcObject = webcam.webcam;
+
+            // Label hasil prediksi
+            labelContainer = document.getElementById("prediction-result");
+            labelContainer.innerHTML = "";
+            for (let i = 0; i < maxPredictions; i++) {
+                labelContainer.appendChild(document.createElement("div"));
+            }
+
+            window.requestAnimationFrame(loop);
+        }
+
+        async function loop() {
+            if (!isRunning) return;
+            webcam.update();
+            await predict();
+            window.requestAnimationFrame(loop);
+        }
+
+        async function predict() {
+            if (!model || !webcam) return;
+            const prediction = await model.predict(webcam.canvas);
+            labelContainer.innerHTML = "";
+
+            let best = prediction[0];
+            prediction.forEach(p => {
+                if (p.probability > best.probability) best = p;
+                const div = document.createElement("div");
+                div.className = "p-2 bg-gray-100 rounded mb-2";
+                div.innerText = `${p.className}: ${(p.probability * 100).toFixed(2)}%`;
+                labelContainer.appendChild(div);
+            });
+
+            // Jika prediksi yakin > 70%, kirim ke chatbot
+            if (best.probability > 0.7) {
+                sendDetectionToChatbot(best.className);
+            }
+        }
+
+        async function stopCamera() {
+            if (webcam) {
+                webcam.stop();
+            }
+            isRunning = false;
+            document.getElementById("prediction-result").innerHTML = `
+                <div class="text-center text-gray-500 py-8">
+                    <div class="text-4xl mb-2">📷</div>
+                    <p>Kamera dihentikan</p>
+                </div>
+            `;
+        }
+
+        // === Integrasi ke Chatbot ===
+        function sendDetectionToChatbot(detectedClass) {
+            const messagesDiv = document.getElementById("chatMessages");
+
+            messagesDiv.innerHTML += `
+                <div class="bg-green-100 p-3 rounded-lg mb-2">
+                    <p class="text-sm">📷 Saya mendeteksi: <b>${detectedClass}</b></p>
+                </div>
+            `;
+
+            const response = generateChatbotResponse(detectedClass.toLowerCase());
+            messagesDiv.innerHTML += `
+                <div class="bg-gray-100 p-3 rounded-lg mb-2">
+                    <p class="text-sm">${response}</p>
+                </div>
+            `;
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+    </script>
 </body>
 </html>

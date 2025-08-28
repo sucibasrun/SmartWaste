@@ -352,7 +352,7 @@ function stopCamera() {
 }
 
 async function predict() {
-    // Simulasi prediksi (karena model Teachable Machine belum diintegrasikan)
+    // Simulasi prediksi (karena model yolov8 belum diintegrasikan)
     const predictions = [
         { className: 'Organik', probability: Math.random() },
         { className: 'Anorganik', probability: Math.random() },
@@ -410,7 +410,6 @@ function displayPredictionResult(prediction) {
                 <div class="mt-2 text-xs">
                     <p><span class="font-semibold">Status AI:</span> 
                         <span class="text-green-600">✅ Model Aktif</span> | 
-                        <span class="text-blue-600">🤖 TensorFlow.js</span>
                     </p>
                 </div>
             </div>
@@ -578,7 +577,7 @@ function createSortingGame() {
 
 function createTimingGame() {
     const questions = [
-        {item: 'Botol Plastik', options: ['50 tahun', '450 tahun', '10 tahun', '5 tahun'], correct: 1, icon: '🍼'},
+        {item: 'Botol Plastik', options: ['50 tahun', '450 tahun', '10 tahun', '5 tahun'], correct: 1, icon: '🧋'},
         {item: 'Kulit Pisang', options: ['2-5 minggu', '2 tahun', '6 bulan', '1 hari'], correct: 0, icon: '🍌'},
         {item: 'Kaleng Aluminium', options: ['50 tahun', '200-500 tahun', '10 tahun', '1 tahun'], correct: 1, icon: '🥤'},
         {item: 'Kantong Plastik', options: ['100 tahun', '500-1000 tahun', '50 tahun', '10 tahun'], correct: 1, icon: '🛍️'},
