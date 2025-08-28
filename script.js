@@ -328,9 +328,13 @@ function filterDatabase(category) {
 }
 
 // AI Detection functions
+let currentFacingMode = "environment"; // default kamera belakang
+
 async function startCamera() {
     try {
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        const stream = await navigator.mediaDevices.getUserMedia({
+            video: { facingMode: currentFacingMode }
+        });
         const video = document.getElementById('webcam');
         if (video) {
             video.srcObject = stream;
@@ -350,6 +354,19 @@ function stopCamera() {
         video.srcObject = null;
     }
 }
+
+// Fungsi untuk bolak-balik kamera
+async function switchCamera() {
+    // Hentikan kamera dulu
+    stopCamera();
+
+    // Toggle kamera
+    currentFacingMode = (currentFacingMode === "user") ? "environment" : "user";
+
+    // Mulai ulang kamera dengan mode baru
+    await startCamera();
+}
+
 
 async function predict() {
     // Simulasi prediksi (karena model yolov8 belum diintegrasikan)

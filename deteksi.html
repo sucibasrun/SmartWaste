@@ -52,10 +52,15 @@
                         <video id="webcam" autoplay muted playsinline class="w-full rounded-lg bg-gray-200" style="height: 300px;"></video>
                         <canvas id="canvas" class="hidden"></canvas>
                     </div>
+
                     <div class="mt-4 space-y-2">
                         <button onclick="startCamera()" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition">Mulai Kamera</button>
                         <button onclick="predict()" class="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition">Deteksi Sampah</button>
                         <button onclick="stopCamera()" class="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition">Stop Kamera</button>
+                        <button onclick="switchCamera()" class="w-full bg-yellow-500 text-white py-2 rounded-lg hover:bg-yellow-600 transition">
+    Ganti Kamera 🔄
+</button>
+
                     </div>
                 </div>
                 <div class="bg-white rounded-lg shadow-lg p-6">
