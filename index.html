@@ -1,108 +1,364 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartWaste - Edukasi Sampah Interaktif</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartWaste - Edukasi Sampah Interaktif</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="gradient-bg text-white shadow-lg">
-        <div class="container mx-auto px-4">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center space-x-2">
-                    <img src="logo/SMANEL (1).png" alt="Logo SmartWaste" class="h-10 w-11 rounded-full">
-                    <img src="logo/SmartWaste.png" alt="Logo SmartWaste" class="h-15 w-20 rounded-full">
-                    <h1 class="text-2xl font-bold">SmartWaste</h1>
-                </div>
-                <div class="hidden md:flex space-x-6">
-                    <a href="index.html" class="hover:text-green-200 transition">Home</a>
-                    <a href="deteksi.html" class="hover:text-green-200 transition">Deteksi AI</a>
-                    <a href="database.html" class="hover:text-green-200 transition">Database</a>
-                    <a href="game.html" class="hover:text-green-200 transition">Game</a>
-                    <a href="edukasi.html" class="hover:text-green-200 transition">Edukasi</a>
-                    <a href="tentang.html" class="hover:text-green-200 transition">Tentang</a>
-                </div>
-                <button class="md:hidden" onclick="toggleMobileMenu()">☰</button>
-            </div>
+
+  <!-- Navigation -->
+  <nav class="gradient-bg text-white shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-between items-center py-4">
+        <div class="flex items-center space-x-2">
+          <img src="logo/SMANEL (1).png" alt="Logo SmartWaste" class="h-10 w-11 rounded-full">
+          <img src="logo/SmartWaste.png" alt="Logo SmartWaste" class="h-15 w-20 rounded-full">
+          <h1 class="text-2xl font-bold">SmartWaste</h1>
         </div>
-    </nav>
-
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden bg-white-100 text-blue p-4 md:hidden">
-        <a href="index.html" class="block py-2">Home</a>
-        <a href="deteksi.html" class="block py-2">Deteksi AI</a>
-        <a href="database.html" class="block py-2">Database</a>
-        <a href="game.html" class="block py-2">Game</a>
-        <a href="edukasi.html" class="block py-2">Edukasi</a>
-        <a href="tentang.html" class="block py-2">Tentang</a>
+        <div class="hidden md:flex space-x-6">
+          <a href="#home" class="hover:text-green-200 transition">Home</a>
+          <a href="#detection" class="hover:text-green-200 transition">Deteksi AI</a>
+          <a href="#database" class="hover:text-green-200 transition">Database</a>
+          <a href="#games" class="hover:text-green-200 transition">Game</a>
+          <a href="#education" class="hover:text-green-200 transition">Edukasi</a>
+          <a href="#about" class="hover:text-green-200 transition">Tentang</a>
+        </div>
+        <button class="md:hidden" onclick="toggleMobileMenu()">☰</button>
+      </div>
     </div>
+  </nav>
 
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden bg-white text-blue p-4 md:hidden">
+    <a href="#home" class="block py-2">Home</a>
+    <a href="#detection" class="block py-2">Deteksi AI</a>
+    <a href="#database" class="block py-2">Database</a>
+    <a href="#games" class="block py-2">Game</a>
+    <a href="#education" class="block py-2">Edukasi</a>
+    <a href="#about" class="block py-2">Tentang</a>
+  </div>
 
-    <!-- Home Section -->
-    <section id="home" class="section">
-        <div class="gradient-bg text-white py-20">
-            <div class="container mx-auto px-4 text-center">
-                 <img src="logo/SmartWaste.png" alt="Logo SmartWaste" class="mx-auto h-26 w-32 mb-4">
-                <h1 class="text-5xl font-bold mb-4">SmartWast</h1>
-                <p class="text-xl mb-8">Platform Pendeteksi Sampah Interaktif dengan AI</p>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-                    <a href="deteksi.html" class="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition cursor-pointer">
-                        <div class="text-3xl mb-3">🤖</div>
-                        <h3 class="font-bold mb-2">Deteksi AI</h3>
-                        <p class="text-sm">Deteksi jenis sampah dengan kamera</p>
-                    </a>
-                    <a href="database.html" class="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition cursor-pointer">
-                        <div class="text-3xl mb-3">📊</div>
-                        <h3 class="font-bold mb-2">Database</h3>
-                        <p class="text-sm">50+ data sampah lengkap</p>
-                    </a>
-                    <a href="game.html" class="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition cursor-pointer">
-                        <div class="text-3xl mb-3">🎮</div>
-                        <h3 class="font-bold mb-2">Game Edukasi</h3>
-                        <p class="text-sm">3 game seru untuk belajar</p>
-                    </a>
-                    <a href="edukasi.html" class="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition cursor-pointer">
-                        <div class="text-3xl mb-3">📚</div>
-                        <h3 class="font-bold mb-2">Materi Edukasi</h3>
-                        <p class="text-sm">Pelajari tentang sampah</p>
-                    </a>
+  <!-- ===================== HOME ===================== -->
+  <section id="home" class="section">
+    <div class="gradient-bg text-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <img src="logo/SmartWaste.png" alt="Logo SmartWaste" class="mx-auto h-26 w-32 mb-4">
+        <h1 class="text-5xl font-bold mb-4">SmartWaste</h1>
+        <p class="text-xl mb-8">Platform Pendeteksi Sampah Interaktif dengan AI</p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+          <a href="#detection" class="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition cursor-pointer">
+            <div class="text-3xl mb-3">🤖</div>
+            <h3 class="font-bold mb-2">Deteksi AI</h3>
+            <p class="text-sm">Deteksi jenis sampah dengan kamera</p>
+          </a>
+          <a href="#database" class="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition cursor-pointer">
+            <div class="text-3xl mb-3">📊</div>
+            <h3 class="font-bold mb-2">Database</h3>
+            <p class="text-sm">50+ data sampah lengkap</p>
+          </a>
+          <a href="#games" class="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition cursor-pointer">
+            <div class="text-3xl mb-3">🎮</div>
+            <h3 class="font-bold mb-2">Game Edukasi</h3>
+            <p class="text-sm">3 game seru untuk belajar</p>
+          </a>
+          <a href="#education" class="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition cursor-pointer">
+            <div class="text-3xl mb-3">📚</div>
+            <h3 class="font-bold mb-2">Materi Edukasi</h3>
+            <p class="text-sm">Pelajari tentang sampah</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DETEKSI AI ===================== -->
+  <section id="detection" class="section py-12">
+    <div class="container mx-auto px-4 py-8">
+      <h2 class="text-3xl font-bold text-center mb-8">🤖 Deteksi Sampah dengan AI</h2>
+      <div class="grid lg:grid-cols-2 gap-8">
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h3 class="text-xl font-bold mb-4">Kamera Deteksi</h3>
+          <div class="relative">
+            <video id="webcam" autoplay muted playsinline class="w-full rounded-lg bg-gray-200" style="height: 300px;"></video>
+            <canvas id="canvas" class="hidden"></canvas>
+          </div>
+          <div class="mt-4 space-y-2">
+            <button onclick="startCamera()" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition">Mulai Kamera</button>
+            <button onclick="predict()" class="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition">Deteksi Sampah</button>
+            <button onclick="stopCamera()" class="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition">Stop Kamera</button>
+            <button onclick="switchCamera()" class="w-full bg-yellow-500 text-white py-2 rounded-lg hover:bg-yellow-600 transition">Ganti Kamera 🔄</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h3 class="text-xl font-bold mb-4">Hasil Deteksi</h3>
+          <div id="prediction-result" class="space-y-4">
+            <div class="text-center text-gray-500 py-8">
+              <div class="text-4xl mb-2">📷</div>
+              <p>Mulai kamera dan deteksi untuk melihat hasil</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DATABASE ===================== -->
+  <section id="database" class="section py-12">
+    <div class="container mx-auto px-4 py-8">
+      <h2 class="text-3xl font-bold text-center mb-8">📊 Database Sampah</h2>
+      <div class="mb-6">
+        <div class="flex flex-wrap gap-2 justify-center">
+          <button onclick="filterDatabase('all')" class="px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition">Semua</button>
+          <button onclick="filterDatabase('Organik')" class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition">🌱 Organik</button>
+          <button onclick="filterDatabase('Anorganik')" class="px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition">♻️ Anorganik</button>
+          <button onclick="filterDatabase('B3')" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition">⚠️ B3</button>
+        </div>
+      </div>
+      <div id="database-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Database items will be populated here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GAME ===================== -->
+  <section id="games" class="section py-12">
+    <div class="container mx-auto px-4 py-8">
+      <h2 class="text-3xl font-bold text-center mb-8">🎮 Game Edukasi</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="game-card bg-white rounded-lg shadow-lg p-6 cursor-pointer" onclick="startGame('sorting')">
+          <div class="text-4xl text-center mb-4">🗂️</div>
+          <h3 class="text-xl font-bold text-center mb-2">Pilah Sampah</h3>
+          <p class="text-gray-600 text-center mb-4">Seret sampah ke tempat yang benar</p>
+          <button class="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition">Mulai Game</button>
+        </div>
+        <div class="game-card bg-white rounded-lg shadow-lg p-6 cursor-pointer" onclick="startGame('timing')">
+          <div class="text-4xl text-center mb-4">⏰</div>
+          <h3 class="text-xl font-bold text-center mb-2">Waktu Terurai</h3>
+          <p class="text-gray-600 text-center mb-4">Tebak lama waktu terurai sampah</p>
+          <button class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition">Mulai Game</button>
+        </div>
+        <div class="game-card bg-white rounded-lg shadow-lg p-6 cursor-pointer" onclick="startGame('quiz')">
+          <div class="text-4xl text-center mb-4">🧠</div>
+          <h3 class="text-xl font-bold text-center mb-2">Quiz Edukasi</h3>
+          <p class="text-gray-600 text-center mb-4">30+ soal dengan 3 tingkat kesulitan</p>
+          <button class="w-full bg-purple-500 text-white py-2 rounded-lg hover:bg-purple-600 transition">Mulai Game</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EDUKASI ===================== -->
+  <section id="education" class="section">
+        <div class="container mx-auto px-4 py-8">
+            <h2 class="text-3xl font-bold text-center mb-8">📚 Edukasi Sampah</h2>
+            <div class="space-y-8">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold mb-4 text-blue-600">🤔 Apa itu Sampah?</h3>
+                    <p class="text-gray-700 leading-relaxed">Sampah adalah sisa kegiatan manusia atau proses alam yang sudah tidak terpakai lagi. Sampah dihasilkan dari berbagai aktivitas seperti makan, belanja, produksi barang, dan kegiatan sehari-hari lainnya.</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold mb-4 text-green-600">🌍 Kenapa Sampah itu Ada?</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-bold mb-2">Penyebab Utama:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                <li>Aktivitas manusia sehari-hari</li>
+                                <li>Konsumsi makanan dan minuman</li>
+                                <li>Produksi dan konsumsi barang</li>
+                                <li>Penggunaan barang sekali pakai</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2">Faktor Pendukung:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                <li>Gaya hidup konsumtif</li>
+                                <li>Kemasan berlebihan</li>
+                                <li>Kurangnya kesadaran lingkungan</li>
+                                <li>Sistem pengelolaan yang kurang baik</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold mb-4 text-purple-600">🗂️ Jenis-jenis Sampah</h3>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="organik text-white p-4 rounded-lg">
+                            <h4 class="font-bold mb-2">🌱 Organik</h4>
+                            <p class="text-sm">Sampah yang mudah terurai secara alami oleh mikroorganisme</p>
+                            <p class="text-xs mt-2 opacity-90">Contoh: kulit buah, daun, sisa makanan</p>
+                        </div>
+                        <div class="anorganik text-white p-4 rounded-lg">
+                            <h4 class="font-bold mb-2">♻️ Anorganik</h4>
+                            <p class="text-sm">Sampah yang sulit atau tidak dapat terurai secara alami</p>
+                            <p class="text-xs mt-2 opacity-90">Contoh: plastik, kaca, logam</p>
+                        </div>
+                        <div class="b3 text-white p-4 rounded-lg">
+                            <h4 class="font-bold mb-2">⚠️ B3</h4>
+                            <p class="text-sm">Sampah berbahaya dan beracun yang dapat membahayakan kesehatan</p>
+                            <p class="text-xs mt-2 opacity-90">Contoh: baterai, cat, oli bekas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold mb-4 text-red-600">⚠️ Dampak Sampah</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div>
+                            <h4 class="font-bold mb-3 text-green-600">🌍 Lingkungan</h4>
+                            <ul class="list-disc list-inside space-y-1 text-gray-700 text-sm">
+                                <li>Pencemaran tanah dan air</li>
+                                <li>Banjir akibat saluran tersumbat</li>
+                                <li>Pencemaran udara</li>
+                                <li>Kerusakan ekosistem</li>
+                                <li>Pemanasan global</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-3 text-blue-600">🏥 Kesehatan</h4>
+                            <ul class="list-disc list-inside space-y-1 text-gray-700 text-sm">
+                                <li>Penyakit diare dan kolera</li>
+                                <li>Infeksi saluran pernapasan</li>
+                                <li>Sarang nyamuk dan tikus</li>
+                                <li>Keracunan dari sampah B3</li>
+                                <li>Gangguan kulit</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-3 text-purple-600">🏘️ Sosial-Ekonomi</h4>
+                            <ul class="list-disc list-inside space-y-1 text-gray-700 text-sm">
+                                <li>Penurunan kualitas hidup</li>
+                                <li>Biaya pengelolaan tinggi</li>
+                                <li>Penurunan nilai properti</li>
+                                <li>Konflik sosial</li>
+                                <li>Kerugian ekonomi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold mb-4 text-indigo-600">♻️ Pengelolaan Sampah (5R)</h3>
+                    <div class="grid md:grid-cols-5 gap-4">
+                        <div class="text-center p-4 bg-red-50 rounded-lg">
+                            <div class="text-3xl mb-2">🚫</div>
+                            <h4 class="font-bold text-red-600 mb-2">Refuse</h4>
+                            <p class="text-sm text-gray-700">Menolak barang yang tidak ramah lingkungan</p>
+                        </div>
+                        <div class="text-center p-4 bg-orange-50 rounded-lg">
+                            <div class="text-3xl mb-2">📉</div>
+                            <h4 class="font-bold text-orange-600 mb-2">Reduce</h4>
+                            <p class="text-sm text-gray-700">Mengurangi penggunaan barang yang menghasilkan sampah</p>
+                        </div>
+                        <div class="text-center p-4 bg-green-50 rounded-lg">
+                            <div class="text-3xl mb-2">🔄</div>
+                            <h4 class="font-bold text-green-600 mb-2">Reuse</h4>
+                            <p class="text-sm text-gray-700">Menggunakan kembali barang yang masih bisa dipakai</p>
+                        </div>
+                        <div class="text-center p-4 bg-blue-50 rounded-lg">
+                            <div class="text-3xl mb-2">♻️</div>
+                            <h4 class="font-bold text-blue-600 mb-2">Recycle</h4>
+                            <p class="text-sm text-gray-700">Mendaur ulang sampah menjadi produk baru</p>
+                        </div>
+                        <div class="text-center p-4 bg-purple-50 rounded-lg">
+                            <div class="text-3xl mb-2">🔄</div>
+                            <h4 class="font-bold text-purple-600 mb-2">Replace</h4>
+                            <p class="text-sm text-gray-700">Mengganti dengan alternatif ramah lingkungan</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Floating Chatbot -->
-    <div class="floating-chat">
-        <button onclick="toggleChatbot()" class="bg-blue-500 text-white p-4 rounded-full shadow-lg hover:bg-blue-600 transition">
-            <span id="chatIcon">💬</span>
-        </button>
-        <div id="chatbot" class="hidden bg-white rounded-lg shadow-xl mt-2 w-80 h-96">
-            <div class="bg-blue-500 text-white p-4 rounded-t-lg">
-                <h4 class="font-bold">🤖 Assistant SmartWast</h4>
-                <p class="text-sm opacity-90">Tanya tentang sampah!</p>
-            </div>
-            <div class="p-4 h-64 overflow-y-auto" id="chatMessages">
-                <div class="bg-gray-100 p-3 rounded-lg mb-2">
-                    <p class="text-sm">Halo! Saya siap membantu Anda belajar tentang sampah. Silakan tanya apa saja! 😊</p>
-                </div>
-            </div>
-            <div class="p-4 border-t">
-                <div class="flex space-x-2">
-                    <input type="text" id="chatInput" placeholder="Ketik pertanyaan..." class="flex-1 border rounded-lg px-3 py-2 text-sm" onkeypress="if(event.key==='Enter') sendMessage()">
-                    <button onclick="sendMessage()" class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-600 transition">Kirim</button>
+  <!-- ===================== TENTANG ===================== -->
+  <section id="about" class="section">
+        <div class="container mx-auto px-4 py-8">
+            <h2 class="text-3xl font-bold text-center mb-8">Tentang SmartWaste</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="text-center mb-8">
+                        <img src="logo/SmartWaste.png" alt="Logo SmartWaste" class="mx-auto h-26 w-32 mb-4">
+                        <h3 class="text-2xl font-bold mb-4">SmartWaste</h3>
+                        <p class="text-gray-600">Platform Pendeteksi Sampah Interaktif dengan Teknologi AI</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold mb-3">🎯 Tujuan</h4>
+                            <p class="text-gray-700 mb-4">Meningkatkan kesadaran masyarakat tentang pengelolaan sampah yang baik melalui teknologi interaktif dan gamifikasi.</p>
+                            
+                            <h4 class="font-bold mb-3">✨ Fitur Utama</h4>
+                            <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                <li>Deteksi sampah dengan AI</li>
+                                <li>Database lengkap 50+ jenis sampah</li>
+                                <li>3 game edukasi interaktif</li>
+                                <li>Materi pembelajaran komprehensif</li>
+                                <li>Chatbot AI untuk konsultasi</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-3">🚀 Teknologi</h4>
+                            <ul class="list-disc list-inside space-y-1 text-gray-700 mb-4">
+                                <li>...</li>
+                                <li>Responsive Web Design</li>
+                                <li>Interactive Games</li>
+                                <li>Real-time Camera Detection</li>
+                                <li>....</li>
+                            </ul>
+                            
+                            <h4 class="font-bold mb-3">🌍 Dampak</h4>
+                            <p class="text-gray-700">Membantu menciptakan generasi yang lebih peduli lingkungan dan memahami pentingnya pengelolaan sampah yang berkelanjutan.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
+
+  <!-- ===================== CHATBOT (Global) ===================== -->
+  <div class="floating-chat">
+    <button onclick="toggleChatbot()" class="bg-blue-500 text-white p-4 rounded-full shadow-lg hover:bg-blue-600 transition">
+      <span id="chatIcon">💬</span>
+    </button>
+    <div id="chatbot" class="hidden bg-white rounded-lg shadow-xl mt-2 w-80 h-96">
+      <div class="bg-blue-500 text-white p-4 rounded-t-lg">
+        <h4 class="font-bold">🤖 Assistant SmartWaste</h4>
+        <p class="text-sm opacity-90">Tanya tentang sampah!</p>
+      </div>
+      <div class="p-4 h-64 overflow-y-auto" id="chatMessages">
+        <div class="bg-gray-100 p-3 rounded-lg mb-2">
+          <p class="text-sm">Halo! Saya siap membantu Anda belajar tentang sampah. Silakan tanya apa saja! 😊</p>
+        </div>
+      </div>
+      <div class="p-4 border-t">
+        <div class="flex space-x-2">
+          <input type="text" id="chatInput" placeholder="Ketik pertanyaan..." class="flex-1 border rounded-lg px-3 py-2 text-sm" onkeypress="if(event.key==='Enter') sendMessage()">
+          <button onclick="sendMessage()" class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-600 transition">Kirim</button>
+        </div>
+      </div>
     </div>
-    
-    <footer>
-    <p>© 2025 SmartWast | Dibuat oleh Wulan Suci Basrun-Ellsaday</p>
+  </div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="bg-gray-800 text-white text-center py-4 mt-8">
+    <p>© 2025 SmartWaste | Dibuat oleh Wulan Suci Basrun-Ellsaday</p>
   </footer>
 
-    <script src="script.js"></script>
-    <script src="chatbot.js"></script>
+  <!-- ===================== SCRIPTS ===================== -->
+  <script src="deteksi.js"></script>
+  <script src="script.js"></script>
+  <script src="chatbot.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      populateDatabase?.();
+    });
+  </script>
 </body>
 </html>
